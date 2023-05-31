@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 function MovieCard({el}) {
 
   return (
     <div className='body'>
     <div className="container"> 
+    <Link to={`/trailer/${el.name}`} style={{ textDecoration:"none", color:"black"}} >
         <div className="item-list">
           <div className="item item-1">
         
@@ -27,7 +29,7 @@ function MovieCard({el}) {
             </div>
           </div>
         </div>
-       
+        </Link>
       </div>
       </div>
    

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 function Navbarr({settext, setrate}) {
   return (
@@ -18,9 +19,9 @@ function Navbarr({settext, setrate}) {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Movies</Nav.Link>
-          <Nav.Link href="#action2">Contact</Nav.Link>
-          <Nav.Link href="#action2">Categorie</Nav.Link>
+          <Nav.Link href="#action1"><Link style={{ textDecoration:"none", color:"white"}} to="/">Movies</Link> </Nav.Link>
+          <Nav.Link href="#action2"><Link style={{ textDecoration:"none", color:"white"}} to="/contact">Contact</Link></Nav.Link>
+          <Nav.Link href="#action2"><Link style={{ textDecoration:"none", color:"white"}} to="/about">About</Link></Nav.Link>
         </Nav>
         <ReactStars count={5} size={24} activeColor="#ffd700" onChange={(newRating)=>setrate(newRating)} />
         <Form className="d-flex">

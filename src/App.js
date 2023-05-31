@@ -4,6 +4,10 @@ import './App.css';
 import Navbarr from './Components/Navbarr';
 import { useState } from 'react';
 import MovieList from './Components/MovieList';
+import { Route, Routes } from 'react-router-dom';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Trailer from './Components/Trailer';
 
 function App() {
 
@@ -120,8 +124,14 @@ function App() {
   return (
     <div>
        <Navbarr settext={settext} setrate={setrate} />  
-       <iframe width="100%" height="500" src="https://www.youtube.com/embed/328sDexhpo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-       <MovieList movies={movies} setmovies={setmovies} text={text} rate={rate} />  
+      
+       
+       <Routes>
+        <Route path="/" element={ <MovieList movies={movies} setmovies={setmovies} text={text} rate={rate} /> } />
+        <Route path="/about" element={ <About/> } />
+        <Route path="/contact" element={ <Contact/> } />
+        <Route path="/trailer/:name" element={ <Trailer movies={movies} /> } />
+      </Routes>  
     </div>
   )
 }
